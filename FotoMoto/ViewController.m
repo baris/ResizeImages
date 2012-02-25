@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import "ImageBrowserItem.h"
+#import "NSImage+Extras.h"
 
 @interface ViewController () 
 
@@ -16,6 +17,12 @@
 @implementation ViewController
 @synthesize imageBrowser = _imageBrowser;
 @synthesize browserData = _browserData;
+
+- (NSMutableArray*)browserData
+{
+    if (!_browserData) _browserData = [[NSMutableArray alloc] init];
+    return _browserData;
+}
 
 - (NSUInteger)numberOfItemsInImageBrowser:(IKImageBrowserView *)aBrowser
 {
@@ -44,9 +51,8 @@
 {
     NSArray* files = [[sender draggingPasteboard] propertyListForType:NSFilenamesPboardType];
     for (id file in files) {
-        NSImage* image = [[NSWorkspace sharedWorkspace] iconForFile:file];
+        NSImage* image = [NSImage thumbnailFromPath:file];
         NSString* imageID = [file lastPathComponent];
-        NSLog(@"%@", imageID);
         ImageBrowserItem* browserItem = [[ImageBrowserItem alloc] init];
         browserItem.image = image;
         browserItem.imageUID = imageID;

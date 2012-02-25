@@ -16,6 +16,7 @@
 		83E20BF514F975DB00CD54D5 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 83E20BF414F975DB00CD54D5 /* ViewController.m */; };
 		83E20BF714F9784200CD54D5 /* Quartz.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83E20BF614F9784200CD54D5 /* Quartz.framework */; };
 		83E20BFA14F97B0400CD54D5 /* ImageBrowserItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 83E20BF914F97B0400CD54D5 /* ImageBrowserItem.m */; };
+		83E20BFD14F9845200CD54D5 /* NSImage+Extras.m in Sources */ = {isa = PBXBuildFile; fileRef = 83E20BFC14F9845200CD54D5 /* NSImage+Extras.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +38,8 @@
 		83E20BF614F9784200CD54D5 /* Quartz.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quartz.framework; path = System/Library/Frameworks/Quartz.framework; sourceTree = SDKROOT; };
 		83E20BF814F97B0400CD54D5 /* ImageBrowserItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageBrowserItem.h; sourceTree = "<group>"; };
 		83E20BF914F97B0400CD54D5 /* ImageBrowserItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageBrowserItem.m; sourceTree = "<group>"; };
+		83E20BFB14F9845200CD54D5 /* NSImage+Extras.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSImage+Extras.h"; sourceTree = "<group>"; };
+		83E20BFC14F9845200CD54D5 /* NSImage+Extras.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSImage+Extras.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +99,8 @@
 				83E20BE914F975C000CD54D5 /* AppDelegate.m */,
 				83E20BEB14F975C100CD54D5 /* MainMenu.xib */,
 				83E20BF314F975DB00CD54D5 /* ViewController.h */,
+				83E20BFB14F9845200CD54D5 /* NSImage+Extras.h */,
+				83E20BFC14F9845200CD54D5 /* NSImage+Extras.m */,
 				83E20BF414F975DB00CD54D5 /* ViewController.m */,
 				83E20BF814F97B0400CD54D5 /* ImageBrowserItem.h */,
 				83E20BF914F97B0400CD54D5 /* ImageBrowserItem.m */,
@@ -183,6 +188,7 @@
 				83E20BEA14F975C000CD54D5 /* AppDelegate.m in Sources */,
 				83E20BF514F975DB00CD54D5 /* ViewController.m in Sources */,
 				83E20BFA14F97B0400CD54D5 /* ImageBrowserItem.m in Sources */,
+				83E20BFD14F9845200CD54D5 /* NSImage+Extras.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
