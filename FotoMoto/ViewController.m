@@ -35,6 +35,11 @@
     return NSDragOperationNone;
 }
 
+- (NSDragOperation)draggingUpdated:(id <NSDraggingInfo>)sender
+{
+    return NSDragOperationEvery;
+}
+
 - (BOOL)performDragOperation:(id <NSDraggingInfo>)sender
 {
     NSArray* files = [[sender draggingPasteboard] propertyListForType:NSFilenamesPboardType];
