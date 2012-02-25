@@ -13,6 +13,9 @@
 		83E20BE714F975C000CD54D5 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 83E20BE514F975C000CD54D5 /* Credits.rtf */; };
 		83E20BEA14F975C000CD54D5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 83E20BE914F975C000CD54D5 /* AppDelegate.m */; };
 		83E20BED14F975C100CD54D5 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 83E20BEB14F975C100CD54D5 /* MainMenu.xib */; };
+		83E20BF514F975DB00CD54D5 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 83E20BF414F975DB00CD54D5 /* ViewController.m */; };
+		83E20BF714F9784200CD54D5 /* Quartz.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83E20BF614F9784200CD54D5 /* Quartz.framework */; };
+		83E20BFA14F97B0400CD54D5 /* ImageBrowserItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 83E20BF914F97B0400CD54D5 /* ImageBrowserItem.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,14 +24,19 @@
 		83E20BD914F975C000CD54D5 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 		83E20BDA14F975C000CD54D5 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		83E20BDB14F975C000CD54D5 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		83E20BDE14F975C000CD54D5 /* FotoMoto-Info.plist */ = {isa = PBXFileReference; path = "FotoMoto-Info.plist"; sourceTree = "<group>"; };
+		83E20BDE14F975C000CD54D5 /* FotoMoto-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "FotoMoto-Info.plist"; sourceTree = "<group>"; };
 		83E20BE014F975C000CD54D5 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		83E20BE214F975C000CD54D5 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		83E20BE414F975C000CD54D5 /* FotoMoto-Prefix.pch */ = {isa = PBXFileReference; path = "FotoMoto-Prefix.pch"; sourceTree = "<group>"; };
+		83E20BE414F975C000CD54D5 /* FotoMoto-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FotoMoto-Prefix.pch"; sourceTree = "<group>"; };
 		83E20BE614F975C000CD54D5 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
-		83E20BE814F975C000CD54D5 /* AppDelegate.h */ = {isa = PBXFileReference; path = AppDelegate.h; sourceTree = "<group>"; };
+		83E20BE814F975C000CD54D5 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		83E20BE914F975C000CD54D5 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		83E20BEC14F975C100CD54D5 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		83E20BF314F975DB00CD54D5 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		83E20BF414F975DB00CD54D5 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		83E20BF614F9784200CD54D5 /* Quartz.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quartz.framework; path = System/Library/Frameworks/Quartz.framework; sourceTree = SDKROOT; };
+		83E20BF814F97B0400CD54D5 /* ImageBrowserItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageBrowserItem.h; sourceTree = "<group>"; };
+		83E20BF914F97B0400CD54D5 /* ImageBrowserItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageBrowserItem.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -36,6 +44,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				83E20BF714F9784200CD54D5 /* Quartz.framework in Frameworks */,
 				83E20BD714F975C000CD54D5 /* Cocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -63,6 +72,7 @@
 		83E20BD514F975C000CD54D5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				83E20BF614F9784200CD54D5 /* Quartz.framework */,
 				83E20BD614F975C000CD54D5 /* Cocoa.framework */,
 				83E20BD814F975C000CD54D5 /* Other Frameworks */,
 			);
@@ -85,6 +95,10 @@
 				83E20BE814F975C000CD54D5 /* AppDelegate.h */,
 				83E20BE914F975C000CD54D5 /* AppDelegate.m */,
 				83E20BEB14F975C100CD54D5 /* MainMenu.xib */,
+				83E20BF314F975DB00CD54D5 /* ViewController.h */,
+				83E20BF414F975DB00CD54D5 /* ViewController.m */,
+				83E20BF814F97B0400CD54D5 /* ImageBrowserItem.h */,
+				83E20BF914F97B0400CD54D5 /* ImageBrowserItem.m */,
 				83E20BDD14F975C000CD54D5 /* Supporting Files */,
 			);
 			path = FotoMoto;
@@ -167,6 +181,8 @@
 			files = (
 				83E20BE314F975C000CD54D5 /* main.m in Sources */,
 				83E20BEA14F975C000CD54D5 /* AppDelegate.m in Sources */,
+				83E20BF514F975DB00CD54D5 /* ViewController.m in Sources */,
+				83E20BFA14F97B0400CD54D5 /* ImageBrowserItem.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
