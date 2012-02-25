@@ -11,12 +11,20 @@
 #import "NSImage+Extras.h"
 
 @interface ViewController () 
+@property (weak) IBOutlet IKImageBrowserView *imageBrowser;
+@property (nonatomic,strong) NSMutableArray* browserData;
+@property (weak) IBOutlet NSTextField *sizeTextField;
 
 @end
 
 @implementation ViewController
 @synthesize imageBrowser = _imageBrowser;
 @synthesize browserData = _browserData;
+@synthesize sizeTextField;
+
+- (IBAction)resizePressed:(NSButton *)sender {
+    NSLog(@"%@", [self.sizeTextField stringValue]);
+}
 
 - (NSMutableArray*)browserData
 {

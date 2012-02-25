@@ -11,7 +11,4 @@
 
 @interface ViewController : NSViewController
 
-@property (weak) IBOutlet IKImageBrowserView *imageBrowser;
-@property (nonatomic,strong) NSMutableArray* browserData;
-
 @end
