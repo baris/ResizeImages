@@ -1,0 +1,295 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		83E20BD714F975C000CD54D5 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83E20BD614F975C000CD54D5 /* Cocoa.framework */; };
+		83E20BE114F975C000CD54D5 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 83E20BDF14F975C000CD54D5 /* InfoPlist.strings */; };
+		83E20BE314F975C000CD54D5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 83E20BE214F975C000CD54D5 /* main.m */; };
+		83E20BE714F975C000CD54D5 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 83E20BE514F975C000CD54D5 /* Credits.rtf */; };
+		83E20BEA14F975C000CD54D5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 83E20BE914F975C000CD54D5 /* AppDelegate.m */; };
+		83E20BED14F975C100CD54D5 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 83E20BEB14F975C100CD54D5 /* MainMenu.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		83E20BD214F975C000CD54D5 /* FotoMoto.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FotoMoto.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		83E20BD614F975C000CD54D5 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		83E20BD914F975C000CD54D5 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		83E20BDA14F975C000CD54D5 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		83E20BDB14F975C000CD54D5 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		83E20BDE14F975C000CD54D5 /* FotoMoto-Info.plist */ = {isa = PBXFileReference; path = "FotoMoto-Info.plist"; sourceTree = "<group>"; };
+		83E20BE014F975C000CD54D5 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		83E20BE214F975C000CD54D5 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		83E20BE414F975C000CD54D5 /* FotoMoto-Prefix.pch */ = {isa = PBXFileReference; path = "FotoMoto-Prefix.pch"; sourceTree = "<group>"; };
+		83E20BE614F975C000CD54D5 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
+		83E20BE814F975C000CD54D5 /* AppDelegate.h */ = {isa = PBXFileReference; path = AppDelegate.h; sourceTree = "<group>"; };
+		83E20BE914F975C000CD54D5 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		83E20BEC14F975C100CD54D5 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		83E20BCF14F975C000CD54D5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				83E20BD714F975C000CD54D5 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		83E20BC714F975C000CD54D5 = {
+			isa = PBXGroup;
+			children = (
+				83E20BDC14F975C000CD54D5 /* FotoMoto */,
+				83E20BD514F975C000CD54D5 /* Frameworks */,
+				83E20BD314F975C000CD54D5 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		83E20BD314F975C000CD54D5 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				83E20BD214F975C000CD54D5 /* FotoMoto.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		83E20BD514F975C000CD54D5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				83E20BD614F975C000CD54D5 /* Cocoa.framework */,
+				83E20BD814F975C000CD54D5 /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		83E20BD814F975C000CD54D5 /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				83E20BD914F975C000CD54D5 /* AppKit.framework */,
+				83E20BDA14F975C000CD54D5 /* CoreData.framework */,
+				83E20BDB14F975C000CD54D5 /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		83E20BDC14F975C000CD54D5 /* FotoMoto */ = {
+			isa = PBXGroup;
+			children = (
+				83E20BE814F975C000CD54D5 /* AppDelegate.h */,
+				83E20BE914F975C000CD54D5 /* AppDelegate.m */,
+				83E20BEB14F975C100CD54D5 /* MainMenu.xib */,
+				83E20BDD14F975C000CD54D5 /* Supporting Files */,
+			);
+			path = FotoMoto;
+			sourceTree = "<group>";
+		};
+		83E20BDD14F975C000CD54D5 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				83E20BDE14F975C000CD54D5 /* FotoMoto-Info.plist */,
+				83E20BDF14F975C000CD54D5 /* InfoPlist.strings */,
+				83E20BE214F975C000CD54D5 /* main.m */,
+				83E20BE414F975C000CD54D5 /* FotoMoto-Prefix.pch */,
+				83E20BE514F975C000CD54D5 /* Credits.rtf */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		83E20BD114F975C000CD54D5 /* FotoMoto */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 83E20BF014F975C100CD54D5 /* Build configuration list for PBXNativeTarget "FotoMoto" */;
+			buildPhases = (
+				83E20BCE14F975C000CD54D5 /* Sources */,
+				83E20BCF14F975C000CD54D5 /* Frameworks */,
+				83E20BD014F975C000CD54D5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FotoMoto;
+			productName = FotoMoto;
+			productReference = 83E20BD214F975C000CD54D5 /* FotoMoto.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		83E20BC914F975C000CD54D5 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0430;
+			};
+			buildConfigurationList = 83E20BCC14F975C000CD54D5 /* Build configuration list for PBXProject "FotoMoto" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 83E20BC714F975C000CD54D5;
+			productRefGroup = 83E20BD314F975C000CD54D5 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				83E20BD114F975C000CD54D5 /* FotoMoto */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		83E20BD014F975C000CD54D5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				83E20BE114F975C000CD54D5 /* InfoPlist.strings in Resources */,
+				83E20BE714F975C000CD54D5 /* Credits.rtf in Resources */,
+				83E20BED14F975C100CD54D5 /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		83E20BCE14F975C000CD54D5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				83E20BE314F975C000CD54D5 /* main.m in Sources */,
+				83E20BEA14F975C000CD54D5 /* AppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		83E20BDF14F975C000CD54D5 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				83E20BE014F975C000CD54D5 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		83E20BE514F975C000CD54D5 /* Credits.rtf */ = {
+			isa = PBXVariantGroup;
+			children = (
+				83E20BE614F975C000CD54D5 /* en */,
+			);
+			name = Credits.rtf;
+			sourceTree = "<group>";
+		};
+		83E20BEB14F975C100CD54D5 /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				83E20BEC14F975C100CD54D5 /* en */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		83E20BEE14F975C100CD54D5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		83E20BEF14F975C100CD54D5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		83E20BF114F975C100CD54D5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "FotoMoto/FotoMoto-Prefix.pch";
+				INFOPLIST_FILE = "FotoMoto/FotoMoto-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		83E20BF214F975C100CD54D5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "FotoMoto/FotoMoto-Prefix.pch";
+				INFOPLIST_FILE = "FotoMoto/FotoMoto-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		83E20BCC14F975C000CD54D5 /* Build configuration list for PBXProject "FotoMoto" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				83E20BEE14F975C100CD54D5 /* Debug */,
+				83E20BEF14F975C100CD54D5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		83E20BF014F975C100CD54D5 /* Build configuration list for PBXNativeTarget "FotoMoto" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				83E20BF114F975C100CD54D5 /* Debug */,
+				83E20BF214F975C100CD54D5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 83E20BC914F975C000CD54D5 /* Project object */;
+}
