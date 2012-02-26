@@ -10,6 +10,11 @@
 #import <Quartz/Quartz.h>
 
 @interface ImageBrowserItem : NSObject
+{
+    NSImage *_image;
+    NSString *_imageUID;
+    NSString *_path;
+}
 
 @property (nonatomic,strong) NSImage* image;
 @property (nonatomic,strong) NSString* imageUID;

@@ -11,9 +11,10 @@
 #import "NSImage+Extras.h"
 
 @interface ViewController () 
-@property (weak) IBOutlet IKImageBrowserView *imageBrowser;
+
+@property (nonatomic,unsafe_unretained) IBOutlet IKImageBrowserView *imageBrowser;
 @property (nonatomic,strong) NSMutableArray* browserData;
-@property (weak) IBOutlet NSTextField *sizeTextField;
+@property (nonatomic,unsafe_unretained) IBOutlet NSTextField *sizeTextField;
 
 @end
 
@@ -44,6 +45,10 @@
         NSBitmapImageRep* resizedRep = [NSBitmapImageRep imageRepWithData:[resized TIFFRepresentation]];
         NSData *data = [resizedRep representationUsingType:NSJPEGFileType properties:nil];
         [data writeToFile:item.path atomically:YES];
+        
+//        [imageRep release];
+//        [resized release];
+//        [resizedRep release];
     }
     [self.browserData removeAllObjects];
     [self.imageBrowser reloadData];

@@ -10,5 +10,10 @@
 #import <Quartz/Quartz.h>
 
 @interface ViewController : NSViewController
+{    
+    IKImageBrowserView *_imageBrowser;
+    NSMutableArray *_browserData;
+    NSTextField *sizeTextField;
+}
 
 @end
