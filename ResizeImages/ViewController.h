@@ -1,14 +1,14 @@
 //
-//  main.m
-//  FotoMoto
+//  ViewController.h
+//  ResizeImages
 //
 //  Created by Baris Metin on 2/25/12.
 //  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
 //
 
 #import <Cocoa/Cocoa.h>
+#import <Quartz/Quartz.h>
 
-int main(int argc, char *argv[])
-{
-    return NSApplicationMain(argc, (const char **)argv);
-}
+@interface ViewController : NSViewController
+
+@end

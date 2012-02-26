@@ -50,7 +50,7 @@
 				<array class="NSMutableArray" key="NSMenuItems">
 					<object class="NSMenuItem" id="694149608">
 						<reference key="NSMenu" ref="649796088"/>
-						<string key="NSTitle">FotoMoto</string>
+						<string key="NSTitle">ResizeImages</string>
 						<string key="NSKeyEquiv"/>
 						<int key="NSKeyEquivModMask">1048576</int>
 						<int key="NSMnemonicLoc">2147483647</int>
@@ -64,11 +64,11 @@
 						</object>
 						<string key="NSAction">submenuAction:</string>
 						<object class="NSMenu" key="NSSubmenu" id="110575045">
-							<string key="NSTitle">FotoMoto</string>
+							<string key="NSTitle">ResizeImages</string>
 							<array class="NSMutableArray" key="NSMenuItems">
 								<object class="NSMenuItem" id="238522557">
 									<reference key="NSMenu" ref="110575045"/>
-									<string key="NSTitle">About FotoMoto</string>
+									<string key="NSTitle">About ResizeImages</string>
 									<string key="NSKeyEquiv"/>
 									<int key="NSMnemonicLoc">2147483647</int>
 									<reference key="NSOnImage" ref="35465992"/>
@@ -133,7 +133,7 @@
 								</object>
 								<object class="NSMenuItem" id="755159360">
 									<reference key="NSMenu" ref="110575045"/>
-									<string key="NSTitle">Hide FotoMoto</string>
+									<string key="NSTitle">Hide ResizeImages</string>
 									<string key="NSKeyEquiv">h</string>
 									<int key="NSKeyEquivModMask">1048576</int>
 									<int key="NSMnemonicLoc">2147483647</int>
@@ -171,7 +171,7 @@
 								</object>
 								<object class="NSMenuItem" id="632727374">
 									<reference key="NSMenu" ref="110575045"/>
-									<string key="NSTitle">Quit FotoMoto</string>
+									<string key="NSTitle">Quit ResizeImages</string>
 									<string key="NSKeyEquiv">q</string>
 									<int key="NSKeyEquivModMask">1048576</int>
 									<int key="NSMnemonicLoc">2147483647</int>
@@ -1286,7 +1286,7 @@
 							<array class="NSMutableArray" key="NSMenuItems">
 								<object class="NSMenuItem" id="105068016">
 									<reference key="NSMenu" ref="992780483"/>
-									<string key="NSTitle">FotoMoto Help</string>
+									<string key="NSTitle">ResizeImages Help</string>
 									<string key="NSKeyEquiv">?</string>
 									<int key="NSKeyEquivModMask">1048576</int>
 									<int key="NSMnemonicLoc">2147483647</int>
@@ -1305,12 +1305,12 @@
 				<int key="NSWindowBacking">2</int>
 				<string key="NSWindowRect">{{335, 390}, {473, 377}}</string>
 				<int key="NSWTFlags">1954021376</int>
-				<string key="NSWindowTitle">FotoMoto</string>
+				<string key="NSWindowTitle">ResizeImages</string>
 				<string key="NSWindowClass">NSWindow</string>
 				<nil key="NSViewClass"/>
 				<nil key="NSUserInterfaceItemIdentifier"/>
 				<object class="NSView" key="NSWindowView" id="439893737">
-					<reference key="NSNextResponder"/>
+					<nil key="NSNextResponder"/>
 					<int key="NSvFlags">256</int>
 					<array class="NSMutableArray" key="NSSubviews">
 						<object class="NSScrollView" id="873126880">
@@ -1483,8 +1483,7 @@
 											</set>
 											<string key="NSFrameSize">{433, 282}</string>
 											<reference key="NSSuperview" ref="847982603"/>
-											<reference key="NSWindow"/>
-											<reference key="NSNextKeyView" ref="777621810"/>
+											<reference key="NSNextKeyView" ref="334430058"/>
 											<int key="NSViewLayerContentsRedrawPolicy">2</int>
 											<bool key="NSViewWantsBestResolutionOpenGLSurface">YES</bool>
 											<string key="NSReuseIdentifierKey">_NS:28</string>
@@ -1505,7 +1504,6 @@
 									</array>
 									<string key="NSFrame">{{1, 1}, {433, 282}}</string>
 									<reference key="NSSuperview" ref="873126880"/>
-									<reference key="NSWindow"/>
 									<reference key="NSNextKeyView" ref="873874757"/>
 									<int key="NSViewLayerContentsRedrawPolicy">2</int>
 									<string key="NSReuseIdentifierKey">_NS:11</string>
@@ -1526,7 +1524,6 @@
 									<int key="NSvFlags">256</int>
 									<string key="NSFrame">{{419, 1}, {15, 282}}</string>
 									<reference key="NSSuperview" ref="873126880"/>
-									<reference key="NSWindow"/>
 									<reference key="NSNextKeyView" ref="342385036"/>
 									<string key="NSReuseIdentifierKey">_NS:26</string>
 									<reference key="NSTarget" ref="873126880"/>
@@ -1539,7 +1536,6 @@
 									<int key="NSvFlags">-2147483392</int>
 									<string key="NSFrame">{{-100, -100}, {443, 15}}</string>
 									<reference key="NSSuperview" ref="873126880"/>
-									<reference key="NSWindow"/>
 									<reference key="NSNextKeyView" ref="847982603"/>
 									<string key="NSReuseIdentifierKey">_NS:30</string>
 									<int key="NSsFlags">1</int>
@@ -1550,8 +1546,7 @@
 							</array>
 							<string key="NSFrame">{{19, 49}, {435, 284}}</string>
 							<reference key="NSSuperview" ref="439893737"/>
-							<reference key="NSWindow"/>
-							<reference key="NSNextKeyView" ref="334430058"/>
+							<reference key="NSNextKeyView" ref="847982603"/>
 							<int key="NSViewLayerContentsRedrawPolicy">2</int>
 							<string key="NSReuseIdentifierKey">_NS:9</string>
 							<int key="NSsFlags">133137</int>
@@ -1565,7 +1560,6 @@
 							<int key="NSvFlags">268</int>
 							<string key="NSFrame">{{17, 340}, {439, 17}}</string>
 							<reference key="NSSuperview" ref="439893737"/>
-							<reference key="NSWindow"/>
 							<reference key="NSNextKeyView" ref="873126880"/>
 							<int key="NSViewLayerContentsRedrawPolicy">2</int>
 							<string key="NSReuseIdentifierKey">_NS:1505</string>
@@ -1603,8 +1597,6 @@
 							<int key="NSvFlags">268</int>
 							<string key="NSFrame">{{377, 11}, {82, 32}}</string>
 							<reference key="NSSuperview" ref="439893737"/>
-							<reference key="NSWindow"/>
-							<reference key="NSNextKeyView"/>
 							<int key="NSViewLayerContentsRedrawPolicy">2</int>
 							<string key="NSReuseIdentifierKey">_NS:9</string>
 							<bool key="NSEnabled">YES</bool>
@@ -1628,7 +1620,6 @@
 							<int key="NSvFlags">268</int>
 							<string key="NSFrame">{{137, 18}, {48, 22}}</string>
 							<reference key="NSSuperview" ref="439893737"/>
-							<reference key="NSWindow"/>
 							<reference key="NSNextKeyView" ref="688567645"/>
 							<int key="NSViewLayerContentsRedrawPolicy">2</int>
 							<string key="NSReuseIdentifierKey">_NS:9</string>
@@ -1708,7 +1699,6 @@
 							<int key="NSvFlags">268</int>
 							<string key="NSFrame">{{17, 22}, {123, 17}}</string>
 							<reference key="NSSuperview" ref="439893737"/>
-							<reference key="NSWindow"/>
 							<reference key="NSNextKeyView" ref="792397837"/>
 							<int key="NSViewLayerContentsRedrawPolicy">2</int>
 							<string key="NSReuseIdentifierKey">_NS:1505</string>
@@ -1729,7 +1719,6 @@
 							<int key="NSvFlags">268</int>
 							<string key="NSFrame">{{193, 21}, {38, 17}}</string>
 							<reference key="NSSuperview" ref="439893737"/>
-							<reference key="NSWindow"/>
 							<int key="NSViewLayerContentsRedrawPolicy">2</int>
 							<string key="NSReuseIdentifierKey">_NS:1505</string>
 							<bool key="NSEnabled">YES</bool>
@@ -1746,8 +1735,6 @@
 						</object>
 					</array>
 					<string key="NSFrameSize">{473, 377}</string>
-					<reference key="NSSuperview"/>
-					<reference key="NSWindow"/>
 					<reference key="NSNextKeyView" ref="652281029"/>
 					<bool key="NSViewIsLayerTreeHost">YES</bool>
 					<int key="NSViewLayerContentsRedrawPolicy">2</int>

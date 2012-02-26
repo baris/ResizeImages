@@ -20,15 +20,15 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		83E20BD214F975C000CD54D5 /* FotoMoto.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FotoMoto.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		83E20BD214F975C000CD54D5 /* ResizeImages.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ResizeImages.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		83E20BD614F975C000CD54D5 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		83E20BD914F975C000CD54D5 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 		83E20BDA14F975C000CD54D5 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		83E20BDB14F975C000CD54D5 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		83E20BDE14F975C000CD54D5 /* FotoMoto-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "FotoMoto-Info.plist"; sourceTree = "<group>"; };
+		83E20BDE14F975C000CD54D5 /* ResizeImages-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ResizeImages-Info.plist"; sourceTree = "<group>"; };
 		83E20BE014F975C000CD54D5 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		83E20BE214F975C000CD54D5 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		83E20BE414F975C000CD54D5 /* FotoMoto-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FotoMoto-Prefix.pch"; sourceTree = "<group>"; };
+		83E20BE414F975C000CD54D5 /* ResizeImages-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ResizeImages-Prefix.pch"; sourceTree = "<group>"; };
 		83E20BE614F975C000CD54D5 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
 		83E20BE814F975C000CD54D5 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		83E20BE914F975C000CD54D5 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -59,7 +59,7 @@
 		83E20BC714F975C000CD54D5 = {
 			isa = PBXGroup;
 			children = (
-				83E20BDC14F975C000CD54D5 /* FotoMoto */,
+				83E20BDC14F975C000CD54D5 /* ResizeImages */,
 				83E20BD514F975C000CD54D5 /* Frameworks */,
 				83E20BD314F975C000CD54D5 /* Products */,
 			);
@@ -68,7 +68,7 @@
 		83E20BD314F975C000CD54D5 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				83E20BD214F975C000CD54D5 /* FotoMoto.app */,
+				83E20BD214F975C000CD54D5 /* ResizeImages.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -93,7 +93,7 @@
 			name = "Other Frameworks";
 			sourceTree = "<group>";
 		};
-		83E20BDC14F975C000CD54D5 /* FotoMoto */ = {
+		83E20BDC14F975C000CD54D5 /* ResizeImages */ = {
 			isa = PBXGroup;
 			children = (
 				83E20BE814F975C000CD54D5 /* AppDelegate.h */,
@@ -107,16 +107,17 @@
 				83E20BF914F97B0400CD54D5 /* ImageBrowserItem.m */,
 				83E20BDD14F975C000CD54D5 /* Supporting Files */,
 			);
-			path = FotoMoto;
+			name = ResizeImages;
+			path = ResizeImages;
 			sourceTree = "<group>";
 		};
 		83E20BDD14F975C000CD54D5 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				83E20BDE14F975C000CD54D5 /* FotoMoto-Info.plist */,
+				83E20BDE14F975C000CD54D5 /* ResizeImages-Info.plist */,
 				83E20BDF14F975C000CD54D5 /* InfoPlist.strings */,
 				83E20BE214F975C000CD54D5 /* main.m */,
-				83E20BE414F975C000CD54D5 /* FotoMoto-Prefix.pch */,
+				83E20BE414F975C000CD54D5 /* ResizeImages-Prefix.pch */,
 				83E20BE514F975C000CD54D5 /* Credits.rtf */,
 			);
 			name = "Supporting Files";
@@ -125,9 +126,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		83E20BD114F975C000CD54D5 /* FotoMoto */ = {
+		83E20BD114F975C000CD54D5 /* ResizeImages */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 83E20BF014F975C100CD54D5 /* Build configuration list for PBXNativeTarget "FotoMoto" */;
+			buildConfigurationList = 83E20BF014F975C100CD54D5 /* Build configuration list for PBXNativeTarget "ResizeImages" */;
 			buildPhases = (
 				83E20BCE14F975C000CD54D5 /* Sources */,
 				83E20BCF14F975C000CD54D5 /* Frameworks */,
@@ -137,9 +138,9 @@
 			);
 			dependencies = (
 			);
-			name = FotoMoto;
-			productName = FotoMoto;
-			productReference = 83E20BD214F975C000CD54D5 /* FotoMoto.app */;
+			name = ResizeImages;
+			productName = ResizeImages;
+			productReference = 83E20BD214F975C000CD54D5 /* ResizeImages.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -150,7 +151,7 @@
 			attributes = {
 				LastUpgradeCheck = 0430;
 			};
-			buildConfigurationList = 83E20BCC14F975C000CD54D5 /* Build configuration list for PBXProject "FotoMoto" */;
+			buildConfigurationList = 83E20BCC14F975C000CD54D5 /* Build configuration list for PBXProject "ResizeImages" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -163,7 +164,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				83E20BD114F975C000CD54D5 /* FotoMoto */,
+				83E20BD114F975C000CD54D5 /* ResizeImages */,
 			);
 		};
 /* End PBXProject section */
@@ -276,9 +277,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "FotoMoto/FotoMoto-Prefix.pch";
-				INFOPLIST_FILE = "FotoMoto/FotoMoto-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				GCC_PREFIX_HEADER = "ResizeImages/ResizeImages-Prefix.pch";
+				INFOPLIST_FILE = "ResizeImages/ResizeImages-Info.plist";
+				PRODUCT_NAME = ResizeImages;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -287,9 +288,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "FotoMoto/FotoMoto-Prefix.pch";
-				INFOPLIST_FILE = "FotoMoto/FotoMoto-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				GCC_PREFIX_HEADER = "ResizeImages/ResizeImages-Prefix.pch";
+				INFOPLIST_FILE = "ResizeImages/ResizeImages-Info.plist";
+				PRODUCT_NAME = ResizeImages;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -297,7 +298,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		83E20BCC14F975C000CD54D5 /* Build configuration list for PBXProject "FotoMoto" */ = {
+		83E20BCC14F975C000CD54D5 /* Build configuration list for PBXProject "ResizeImages" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				83E20BEE14F975C100CD54D5 /* Debug */,
@@ -306,7 +307,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		83E20BF014F975C100CD54D5 /* Build configuration list for PBXNativeTarget "FotoMoto" */ = {
+		83E20BF014F975C100CD54D5 /* Build configuration list for PBXNativeTarget "ResizeImages" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				83E20BF114F975C100CD54D5 /* Debug */,

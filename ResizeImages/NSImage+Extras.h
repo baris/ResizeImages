@@ -1,6 +1,6 @@
 //
-//  AppDelegate.h
-//  FotoMoto
+//  NSImage+Extras.h
+//  ResizeImages
 //
 //  Created by Baris Metin on 2/25/12.
 //  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
@@ -8,8 +8,8 @@
 
 #import <Cocoa/Cocoa.h>
 
-@interface AppDelegate : NSObject <NSApplicationDelegate>
+@interface NSImage (Extras)
 
-@property (assign) IBOutlet NSWindow *window;
++ (NSImage*)thumbnailFromPath:(NSString*)path;
 
 @end
