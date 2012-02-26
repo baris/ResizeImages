@@ -15,6 +15,8 @@
 @property (nonatomic,strong) NSMutableArray* browserData;
 @property (weak) IBOutlet NSTextField *sizeTextField;
 
+- (void)addImageFromPath:(NSString*)path toArray:(NSMutableArray*)array;
+
 @end
 
 @implementation ViewController
@@ -82,13 +84,7 @@
 {
     NSArray* files = [[sender draggingPasteboard] propertyListForType:NSFilenamesPboardType];
     for (id file in files) {
-        NSImage* image = [NSImage thumbnailFromPath:file];
-        NSString* imageID = [file lastPathComponent];
-        ImageBrowserItem* browserItem = [[ImageBrowserItem alloc] init];
-        browserItem.image = image;
-        browserItem.imageUID = imageID;
-        browserItem.path = file;
-        [self.browserData addObject:browserItem];
+        [self addImageFromPath:file toArray:self.browserData];
     }
     if ([self.browserData count] > 0) {
         return YES;
@@ -99,6 +95,28 @@
 - (void)concludeDragOperation:(id <NSDraggingInfo>)sender
 {
     [self.imageBrowser reloadData];
+}
+
+- (void)addImageFromPath:(NSString*)path toArray:(NSMutableArray*)array
+{
+    NSDictionary *attrs = [[NSFileManager defaultManager] attributesOfItemAtPath:path error:NULL];
+    if ([attrs valueForKey:NSFileType] == NSFileTypeDirectory) {
+        // add files in the directory recursively
+        NSArray *contents = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:path error:NULL];
+        for (NSString* content in contents) {
+            NSString *contentPath = [path stringByAppendingPathComponent:content];
+            [self addImageFromPath:contentPath toArray:array];
+        }
+        return;
+    }
+    
+    NSImage* image = [NSImage thumbnailFromPath:path];
+    NSString* imageID = [path lastPathComponent];
+    ImageBrowserItem* browserItem = [[ImageBrowserItem alloc] init];
+    browserItem.image = image;
+    browserItem.imageUID = imageID;
+    browserItem.path = path;
+    [array addObject:browserItem];    
 }
 
 @end
