@@ -27,6 +27,8 @@
 - (IBAction)resizePressed:(NSButton *)sender {
     for (ImageBrowserItem* item in self.browserData) {
         NSBitmapImageRep* imageRep = [NSBitmapImageRep imageRepWithContentsOfFile:item.path];
+        // Issues with some PNG files: https://discussions.apple.com/thread/1976694?start=0&tstart=0
+        if (!imageRep) return;
         
         NSSize size = [imageRep size];
         CGFloat w,h;
@@ -100,8 +102,8 @@
 - (void)addImageFromPath:(NSString*)path toArray:(NSMutableArray*)array
 {
     NSDictionary *attrs = [[NSFileManager defaultManager] attributesOfItemAtPath:path error:NULL];
+    // add files in the directory recursively
     if ([attrs valueForKey:NSFileType] == NSFileTypeDirectory) {
-        // add files in the directory recursively
         NSArray *contents = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:path error:NULL];
         for (NSString* content in contents) {
             NSString *contentPath = [path stringByAppendingPathComponent:content];
@@ -110,6 +112,17 @@
         return;
     }
     
+    // Allow certain file extensions
+    BOOL knownFileType = NO;
+    for (NSString* ext in [NSArray arrayWithObjects:@"jpeg", @"jpg", @"png", @"gif", @"bmp", nil]) {
+        if ([[path pathExtension] caseInsensitiveCompare:ext] == NSOrderedSame) {
+            knownFileType = YES;
+            break;
+        }
+    }
+    if (!knownFileType) {
+        return;
+    }
     NSImage* image = [NSImage thumbnailFromPath:path];
     NSString* imageID = [path lastPathComponent];
     ImageBrowserItem* browserItem = [[ImageBrowserItem alloc] init];
