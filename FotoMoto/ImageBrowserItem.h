@@ -13,6 +13,7 @@
 
 @property (nonatomic,strong) NSImage* image;
 @property (nonatomic,strong) NSString* imageUID;
+@property (nonatomic,strong) NSString* path;
 
 - (NSString*)imageUID;
 - (NSString *)imageRepresentationType;

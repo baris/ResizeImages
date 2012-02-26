@@ -40,6 +40,7 @@
 		83E20BF914F97B0400CD54D5 /* ImageBrowserItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageBrowserItem.m; sourceTree = "<group>"; };
 		83E20BFB14F9845200CD54D5 /* NSImage+Extras.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSImage+Extras.h"; sourceTree = "<group>"; };
 		83E20BFC14F9845200CD54D5 /* NSImage+Extras.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSImage+Extras.m"; sourceTree = "<group>"; };
+		83E20BFE14F9B63D00CD54D5 /* tr */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = tr; path = tr.lproj/MainMenu.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -155,6 +156,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				tr,
 			);
 			mainGroup = 83E20BC714F975C000CD54D5;
 			productRefGroup = 83E20BD314F975C000CD54D5 /* Products */;
@@ -215,6 +217,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				83E20BEC14F975C100CD54D5 /* en */,
+				83E20BFE14F9B63D00CD54D5 /* tr */,
 			);
 			name = MainMenu.xib;
 			sourceTree = "<group>";

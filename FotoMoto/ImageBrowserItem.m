@@ -13,6 +13,7 @@
 
 @synthesize image = _image;
 @synthesize imageUID = _imageUID;
+@synthesize path = _path;
 
 - (NSString*)imageUID
 {
@@ -28,6 +29,11 @@
 - (id)imageRepresentation
 {
     return self.image;
+}
+
+- (NSString*)description
+{
+    return self.path;
 }
 
 @end

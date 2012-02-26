@@ -23,7 +23,30 @@
 @synthesize sizeTextField;
 
 - (IBAction)resizePressed:(NSButton *)sender {
-    NSLog(@"%@", [self.sizeTextField stringValue]);
+    for (ImageBrowserItem* item in self.browserData) {
+        NSBitmapImageRep* imageRep = [NSBitmapImageRep imageRepWithContentsOfFile:item.path];
+        
+        NSSize size = [imageRep size];
+        CGFloat w,h;
+        if (size.width > size.height) {
+            w = [self.sizeTextField floatValue];
+            h = (w * size.height) / size.width;
+        } else {
+            h = [self.sizeTextField floatValue];
+            w = (h * size.width) / size.height;
+        }
+
+        NSImage* resized = [[NSImage alloc] initWithSize:NSMakeSize(w, h)];
+        [resized lockFocus];
+        [imageRep drawInRect:NSMakeRect(0, 0, w, h)];
+        [resized unlockFocus];
+        
+        NSBitmapImageRep* resizedRep = [NSBitmapImageRep imageRepWithData:[resized TIFFRepresentation]];
+        NSData *data = [resizedRep representationUsingType:NSJPEGFileType properties:nil];
+        [data writeToFile:item.path atomically:YES];
+    }
+    [self.browserData removeAllObjects];
+    [self.imageBrowser reloadData];
 }
 
 - (NSMutableArray*)browserData
@@ -64,6 +87,7 @@
         ImageBrowserItem* browserItem = [[ImageBrowserItem alloc] init];
         browserItem.image = image;
         browserItem.imageUID = imageID;
+        browserItem.path = file;
         [self.browserData addObject:browserItem];
     }
     if ([self.browserData count] > 0) {
