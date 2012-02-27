@@ -16,6 +16,7 @@
 @property (weak) IBOutlet NSTextField *sizeTextField;
 @property (weak) IBOutlet NSProgressIndicator *progressIndicator;
 
+
 + (void)addImageFromPath:(NSString*)path toArray:(NSMutableArray*)array;
 + (void)resizeImageUsingImageBrowserItem:(ImageBrowserItem*)item toLongestSide:(CGFloat)longestSide;
 
@@ -27,6 +28,8 @@
 @synthesize progressIndicator = _progressIndicator;
 @synthesize sizeTextField;
 
+
+
 - (IBAction)resizePressed:(NSButton *)sender {
     __block NSMutableArray *__browserData = self.browserData;
     __block IKImageBrowserView *__imageBrowser = self.imageBrowser;
@@ -35,7 +38,8 @@
     
     [__progressIndicator setHidden:NO];
     [__progressIndicator startAnimation:self];
-    [__progressIndicator display];    
+    [__progressIndicator display];
+    [__imageBrowser setAlphaValue:0.4];
     dispatch_queue_t resizeQueue = dispatch_queue_create("Resize Image Queue", NULL);
     dispatch_async(resizeQueue, ^(void) {
         for (ImageBrowserItem* item in __browserData) {
@@ -47,6 +51,7 @@
             [__imageBrowser reloadData];
             [__progressIndicator stopAnimation:self];
             [__progressIndicator setHidden:YES];
+            [__imageBrowser setAlphaValue:1.0];
         });
 
     });
@@ -92,6 +97,7 @@
     [__progressIndicator setHidden:NO];
     [__progressIndicator startAnimation:self];
     [__progressIndicator display];
+    [__imageBrowser setAlphaValue:0.4];
     dispatch_queue_t addImageQueue = dispatch_queue_create("Add Image Queue", NULL);
     dispatch_async(addImageQueue, ^(void){
         for (id file in files) {
@@ -101,6 +107,7 @@
             [__imageBrowser reloadData];
             [__progressIndicator stopAnimation:self];
             [__progressIndicator setHidden:YES];
+            [__imageBrowser setAlphaValue:1.0];
         });
     });
     dispatch_release(addImageQueue);
