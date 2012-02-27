@@ -14,6 +14,7 @@
 @property (weak) IBOutlet IKImageBrowserView *imageBrowser;
 @property (nonatomic,strong) NSMutableArray* browserData;
 @property (weak) IBOutlet NSTextField *sizeTextField;
+@property (weak) IBOutlet NSProgressIndicator *progressIndicator;
 
 + (void)addImageFromPath:(NSString*)path toArray:(NSMutableArray*)array;
 + (void)resizeImageUsingImageBrowserItem:(ImageBrowserItem*)item toLongestSide:(CGFloat)longestSide;
@@ -23,13 +24,18 @@
 @implementation ViewController
 @synthesize imageBrowser = _imageBrowser;
 @synthesize browserData = _browserData;
+@synthesize progressIndicator = _progressIndicator;
 @synthesize sizeTextField;
 
 - (IBAction)resizePressed:(NSButton *)sender {
     __block NSMutableArray *__browserData = self.browserData;
     __block IKImageBrowserView *__imageBrowser = self.imageBrowser;
+    __block NSProgressIndicator *__progressIndicator = self.progressIndicator;
     CGFloat longestSideLength = [self.sizeTextField floatValue];
     
+    [__progressIndicator setHidden:NO];
+    [__progressIndicator startAnimation:self];
+    [__progressIndicator display];    
     dispatch_queue_t resizeQueue = dispatch_queue_create("Resize Image Queue", NULL);
     dispatch_async(resizeQueue, ^(void) {
         for (ImageBrowserItem* item in __browserData) {
@@ -39,6 +45,8 @@
         dispatch_async(dispatch_get_main_queue(), ^(void) {
             [__browserData removeAllObjects];
             [__imageBrowser reloadData];
+            [__progressIndicator stopAnimation:self];
+            [__progressIndicator setHidden:YES];
         });
 
     });
@@ -76,26 +84,28 @@
 
 - (BOOL)performDragOperation:(id <NSDraggingInfo>)sender
 {
-    __block BOOL ret = YES;
     __block NSMutableArray *__browserData = self.browserData;
     __block IKImageBrowserView *__imageBrowser = self.imageBrowser;
+    __block NSProgressIndicator *__progressIndicator = self.progressIndicator;
     NSArray* files = [[sender draggingPasteboard] propertyListForType:NSFilenamesPboardType];
     
+    [__progressIndicator setHidden:NO];
+    [__progressIndicator startAnimation:self];
+    [__progressIndicator display];
     dispatch_queue_t addImageQueue = dispatch_queue_create("Add Image Queue", NULL);
     dispatch_async(addImageQueue, ^(void){
         for (id file in files) {
             [ViewController addImageFromPath:file toArray:__browserData];
         };
         dispatch_sync(dispatch_get_main_queue(), ^(void){
-            if ([__browserData count] > 0) {
-                ret = YES;
-            }
             [__imageBrowser reloadData];
+            [__progressIndicator stopAnimation:self];
+            [__progressIndicator setHidden:YES];
         });
     });
     dispatch_release(addImageQueue);
     
-    return ret;
+    return YES;
 }
 
 - (void)concludeDragOperation:(id <NSDraggingInfo>)sender
@@ -133,7 +143,7 @@
     browserItem.image = image;
     browserItem.imageUID = imageID;
     browserItem.path = path;
-    [array addObject:browserItem];    
+    [array addObject:browserItem];
 }
 
 + (void)resizeImageUsingImageBrowserItem:(ImageBrowserItem *)item toLongestSide:(CGFloat)longestSide
@@ -159,7 +169,7 @@
     
     NSBitmapImageRep* resizedRep = [NSBitmapImageRep imageRepWithData:[resized TIFFRepresentation]];
     NSData *data = [resizedRep representationUsingType:NSJPEGFileType properties:nil];
-    [data writeToFile:item.path atomically:YES];    
+    [data writeToFile:item.path atomically:YES];
 }
 
 @end
