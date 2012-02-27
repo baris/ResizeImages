@@ -15,7 +15,8 @@
 @property (nonatomic,strong) NSMutableArray* browserData;
 @property (weak) IBOutlet NSTextField *sizeTextField;
 
-- (void)addImageFromPath:(NSString*)path toArray:(NSMutableArray*)array;
++ (void)addImageFromPath:(NSString*)path toArray:(NSMutableArray*)array;
++ (void)resizeImageUsingImageBrowserItem:(ImageBrowserItem*)item toLongestSide:(CGFloat)longestSide;
 
 @end
 
@@ -25,32 +26,23 @@
 @synthesize sizeTextField;
 
 - (IBAction)resizePressed:(NSButton *)sender {
-    for (ImageBrowserItem* item in self.browserData) {
-        NSBitmapImageRep* imageRep = [NSBitmapImageRep imageRepWithContentsOfFile:item.path];
-        // Issues with some PNG files: https://discussions.apple.com/thread/1976694?start=0&tstart=0
-        if (!imageRep) return;
-        
-        NSSize size = [imageRep size];
-        CGFloat w,h;
-        if (size.width > size.height) {
-            w = [self.sizeTextField floatValue];
-            h = (w * size.height) / size.width;
-        } else {
-            h = [self.sizeTextField floatValue];
-            w = (h * size.width) / size.height;
+    __block NSMutableArray *__browserData = self.browserData;
+    __block IKImageBrowserView *__imageBrowser = self.imageBrowser;
+    CGFloat longestSideLength = [self.sizeTextField floatValue];
+    
+    dispatch_queue_t resizeQueue = dispatch_queue_create("Resize Image Queue", NULL);
+    dispatch_async(resizeQueue, ^(void) {
+        for (ImageBrowserItem* item in __browserData) {
+            [ViewController resizeImageUsingImageBrowserItem:item toLongestSide:longestSideLength];
+            
         }
+        dispatch_async(dispatch_get_main_queue(), ^(void) {
+            [__browserData removeAllObjects];
+            [__imageBrowser reloadData];
+        });
 
-        NSImage* resized = [[NSImage alloc] initWithSize:NSMakeSize(w, h)];
-        [resized lockFocus];
-        [imageRep drawInRect:NSMakeRect(0, 0, w, h)];
-        [resized unlockFocus];
-        
-        NSBitmapImageRep* resizedRep = [NSBitmapImageRep imageRepWithData:[resized TIFFRepresentation]];
-        NSData *data = [resizedRep representationUsingType:NSJPEGFileType properties:nil];
-        [data writeToFile:item.path atomically:YES];
-    }
-    [self.browserData removeAllObjects];
-    [self.imageBrowser reloadData];
+    });
+    dispatch_release(resizeQueue);
 }
 
 - (NSMutableArray*)browserData
@@ -84,14 +76,26 @@
 
 - (BOOL)performDragOperation:(id <NSDraggingInfo>)sender
 {
+    __block BOOL ret = YES;
+    __block NSMutableArray *__browserData = self.browserData;
+    __block IKImageBrowserView *__imageBrowser = self.imageBrowser;
     NSArray* files = [[sender draggingPasteboard] propertyListForType:NSFilenamesPboardType];
-    for (id file in files) {
-        [self addImageFromPath:file toArray:self.browserData];
-    }
-    if ([self.browserData count] > 0) {
-        return YES;
-    }
-    return NO;
+    
+    dispatch_queue_t addImageQueue = dispatch_queue_create("Add Image Queue", NULL);
+    dispatch_async(addImageQueue, ^(void){
+        for (id file in files) {
+            [ViewController addImageFromPath:file toArray:__browserData];
+        };
+        dispatch_sync(dispatch_get_main_queue(), ^(void){
+            if ([__browserData count] > 0) {
+                ret = YES;
+            }
+            [__imageBrowser reloadData];
+        });
+    });
+    dispatch_release(addImageQueue);
+    
+    return ret;
 }
 
 - (void)concludeDragOperation:(id <NSDraggingInfo>)sender
@@ -99,7 +103,7 @@
     [self.imageBrowser reloadData];
 }
 
-- (void)addImageFromPath:(NSString*)path toArray:(NSMutableArray*)array
++ (void)addImageFromPath:(NSString*)path toArray:(NSMutableArray*)array
 {
     NSDictionary *attrs = [[NSFileManager defaultManager] attributesOfItemAtPath:path error:NULL];
     // add files in the directory recursively
@@ -130,6 +134,32 @@
     browserItem.imageUID = imageID;
     browserItem.path = path;
     [array addObject:browserItem];    
+}
+
++ (void)resizeImageUsingImageBrowserItem:(ImageBrowserItem *)item toLongestSide:(CGFloat)longestSide
+{
+    NSBitmapImageRep* imageRep = [NSBitmapImageRep imageRepWithContentsOfFile:item.path];
+    // Issues with some PNG files: https://discussions.apple.com/thread/1976694?start=0&tstart=0
+    if (!imageRep) return;
+    
+    NSSize size = [imageRep size];
+    CGFloat w,h;
+    if (size.width > size.height) {
+        w = longestSide;
+        h = (w * size.height) / size.width;
+    } else {
+        h = longestSide;
+        w = (h * size.width) / size.height;
+    }
+    
+    NSImage* resized = [[NSImage alloc] initWithSize:NSMakeSize(w, h)];
+    [resized lockFocus];
+    [imageRep drawInRect:NSMakeRect(0, 0, w, h)];
+    [resized unlockFocus];
+    
+    NSBitmapImageRep* resizedRep = [NSBitmapImageRep imageRepWithData:[resized TIFFRepresentation]];
+    NSData *data = [resizedRep representationUsingType:NSJPEGFileType properties:nil];
+    [data writeToFile:item.path atomically:YES];    
 }
 
 @end
